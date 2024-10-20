@@ -1,0 +1,391 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Uso de la nueva fuente */
+  body {
+    font-family: 'Quicksand', sans-serif;
+    background-color: #FDF7FF;
+    color: #333;
+    text-align: center;
+  }
+  
+  /* Header */
+  header {
+    background-color: #FFDADA;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+  }
+  
+  .logo {
+    font-size: 24px;
+  }
+  
+  .hamburger {
+    font-size: 24px;
+    cursor: pointer;
+    display: none; /* Solo se mostrará en pantallas pequeñas */
+  }
+  
+  .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    padding: 8px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+  }
+  
+  .nav-links a:hover {
+    background-color: #FFB6B6;
+    color: #fff;
+  }
+  
+  /* Estilos mejorados para el menú hamburguesa */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: block; /* Mostramos el ícono del menú en pantallas pequeñas */
+    }
+  
+    .nav-links {
+      flex-direction: column;
+      position: absolute;
+      top: 60px;
+      right: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: #FFDADA;
+      justify-content: center;
+      align-items: center;
+      gap: 30px;
+      transform: translateX(100%);
+      transition: transform 0.5s ease-in-out;
+    }
+  
+    .nav-links.show {
+      transform: translateX(0); /* Mueve el menú para que se vea al hacer clic */
+    }
+  
+    .nav-links a {
+      font-size: 24px; /* Agrandamos las opciones en pantallas pequeñas */
+      color: #FF6F61;
+      padding: 10px 20px;
+      background-color: #FFB6B6;
+      border-radius: 25px;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s, transform 0.3s;
+    }
+  
+    .nav-links a:hover {
+      background-color: #FF6F61;
+      color: #fff;
+      transform: scale(1.05); /* Efecto hover agrandando ligeramente */
+    }
+  }
+  
+/* Estilos para la sección de bienvenida */
+#bienvenida {
+  height: 80vh;
+  display: flex;
+  flex-direction: column; /* Cambiado a columna para que el texto y el reproductor estén uno debajo del otro */
+  align-items: center; /* Centrar horizontalmente */
+  justify-content: center; /* Centrar verticalmente */
+  background-color: #E0F7FA; /* Color de fondo */
+  padding: 60px 20px; /* Espacio alrededor */
+}
+
+.mensaje-bienvenida {
+  text-align: center; /* Centrar texto */
+  margin-bottom: 20px; /* Espacio debajo del mensaje */
+}
+
+/* Estilos del título principal */
+h1 {
+  font-size: 2.5rem;
+  color: #FF6F61; /* Color del texto */
+  font-weight: bold;
+  opacity: 0; /* Inicialmente oculto para la animación */
+  animation: fadeIn 2s ease-in-out forwards 0.5s; /* Animación */
+}
+
+/* Estilos del mensaje secundario */
+.mensaje-secundario {
+  font-size: 1.2rem; /* Letra más pequeña */
+  color: #FF6F61; /* Mismo color que el título */
+  margin-top: 10px; /* Espacio arriba */
+  opacity: 0; /* Inicialmente oculto para la animación */
+  animation: fadeIn 2s ease-in-out forwards 1.2s; /* Animación */
+}
+
+/* Animación para el fade in */
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+      transform: translateY(-30px); /* Desplazamiento hacia arriba */
+  }
+  100% {
+      opacity: 1; /* Totalmente visible */
+      transform: translateY(0); /* Sin desplazamiento */
+  }
+}
+
+/* Estilos para el reproductor */
+.reproductor {
+  display: flex; /* Usar flexbox para alinear el contenido */
+  flex-direction: column; /* Disposición en columna */
+  align-items: center; /* Centrar horizontalmente */
+  margin-top: 20px; /* Espacio superior */
+  background-color: #FFFFFF; /* Fondo del reproductor */
+  padding: 20px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  width: 100%; /* Ancho completo */
+  max-width: 400px; /* Ancho máximo para el reproductor */
+}
+
+/* Estilos para el botón de reproducción */
+.boton-play {
+  padding: 10px 20px; /* Espaciado interno */
+  background-color: #FF6F61; /* Color de fondo del botón */
+  color: #FFFFFF; /* Color del texto */
+  border: none; /* Sin borde */
+  border-radius: 5px; /* Bordes redondeados */
+  cursor: pointer; /* Cambiar el cursor al pasar por encima */
+  font-size: 16px; /* Tamaño de fuente */
+  transition: background-color 0.3s; /* Transición suave del color */
+}
+
+.boton-play:hover {
+  background-color: #FF8C61; /* Color al pasar el cursor */
+}
+
+/* Ajustes para pantallas más grandes */
+@media (min-width: 768px) {
+  h1 {
+      font-size: 4rem; /* Aumentar tamaño del título en pantallas grandes */
+  }
+
+  .mensaje-secundario {
+      font-size: 1.5rem; /* Aumentar tamaño del mensaje secundario en pantallas grandes */
+  }
+
+  .reproductor {
+      max-width: 600px; /* Aumentar el ancho máximo en pantallas grandes */
+  }
+}
+
+  
+ /* Estilos para mensajes  */
+ #mensajes {
+    padding: 20px;
+    background-color: #E0F7FA; 
+    text-align: center; 
+    justify-content: center;
+  }
+  
+  .instrucciones {
+    font-size: 1.5rem;
+    color: #FF6F61; 
+    margin-bottom: 20px;
+  }
+  
+  .mensaje-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  .mensaje {
+    width: 50%; /* Ajustar el ancho para pantallas pequeñas */
+    height: 150px; /* Altura del cuadrado */
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center; /* Centrar verticalmente */
+    justify-content: center; /* Centrar horizontalmente */
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar efecto de caja */
+  }
+  
+  .mensaje-text {
+    opacity: 0; /* Oculto inicialmente */
+    position: absolute; /* Se posiciona sobre el cuadrado */
+    bottom: 10px; /* Ajustar para que esté más cerca del centro */
+    text-align: center;
+    width: 100%;
+    transition: opacity 0.3s ease, bottom 0.3s ease;
+    color: #333;
+  }
+  
+  /* Mostrar texto al hacer clic */
+  .mensaje.active .mensaje-text {
+    opacity: 1; /* Hacer visible el texto */
+    bottom: 20%; /* Ajustar para que esté más visible */
+  }
+
+  
+
+  #galeria {
+    padding: 50px 20px; /* Aumenta el espacio interno (superior e inferior) */
+    
+    background-color: #E0F7FA; 
+  }
+  
+  .galeria-container {
+    margin-top: 30px;
+    margin-bottom: 50px;
+    display: flex;
+    overflow-x: scroll; /* Permitir desplazamiento horizontal */
+    scroll-snap-type: x mandatory; /* Habilitar el ajuste de desplazamiento */
+  }
+  
+  .galeria-imagen {
+    flex: 0 0 100%; /* Cada imagen ocupa todo el ancho del contenedor */
+    scroll-snap-align: start; /* Alinear al inicio al desplazarse */
+  }
+  
+  .galeria-imagen img {
+    width: 100%; /* La imagen ocupa todo el ancho del cuadrado */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 10px; /* Bordes redondeados */
+  }
+  
+  .galeria h2 {
+    text-align: center; /* Centra el título */
+    margin-bottom: 20px;
+    margin-top: 20%;
+  }
+  
+  .foto-container {
+    margin-top: 30px;
+    display: grid; /* Usamos grid para organizar las fotos */
+    grid-template-columns: repeat(2, 1fr); /* Dos columnas */
+    gap: 10px; /* Espacio entre las imágenes */
+  }
+  
+  .foto {
+    width: 100%; /* Ocupa el 100% del espacio disponible en su celda */
+    height: auto; /* Mantiene la relación de aspecto */
+    border-radius: 8px; /* Bordes redondeados para las fotos */
+    object-fit: cover; /* Asegura que la imagen llene el espacio */
+  }
+
+    
+  /* Ajustes para pantallas más grandes */
+  @media (min-width: 768px) {
+    .mensaje {
+      width: 30%; /* Ancho mayor en pantallas más grandes */
+    }
+    
+    .instrucciones {
+      font-size: 2rem; /* Tamaño mayor para instrucciones en pantallas grandes */
+    }
+
+    .galeria-imagen {
+        flex: 0 0 50%; /* Cada imagen ocupa todo el ancho del contenedor */
+        scroll-snap-align: start; /* Alinear al inicio al desplazarse */
+      }
+      .galeria-imagen img {
+        width: 80%; /* La imagen ocupa todo el ancho del cuadrado */
+        height: auto; /* Mantiene la relación de aspecto */
+        border-radius: 10px; /* Bordes redondeados */
+      }
+  }
+
+
+  .despedida-section {
+    height: 80vh;
+    padding: 50px;
+    display: flex; /* Usar flexbox */
+    flex-direction: column; /* Disposición en columna */
+    justify-content: center; /* Centrar verticalmente */
+    align-items: center; /* Centrar horizontalmente */
+    text-align: center;
+    background-color:#E0F7FA; /* Fondo suave */
+  }
+  
+  
+  .despedida-titulo {
+    font-size: 2em;
+    margin-bottom: 20px;
+    animation: fadeIn 1s ease-in;
+  }
+  
+  .boton {
+    padding: 10px 20px;
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: white;
+    background-color: #FF6F61; /* Color de fondo */
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .boton:hover {
+    background-color: #FF6F61;/* Color de fondo al pasar el mouse */
+  }
+  
+  .mensaje-desplegable {
+    margin-top: 10px;
+    font-size: 1.2em;
+    color: #333; /* Color del texto */
+    animation: slideIn 0.8s forwards;
+  }
+  
+  .oculto {
+    display: none; /* Ocultar inicialmente el mensaje */
+  }
+  
+  /* Animaciones */
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+  @keyframes slideIn {
+    from { transform: translateY(-20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+
+.footer {
+  background-color: #FF6F61; /* Color de fondo del footer */
+  color: #FFFFFF; /* Color del texto */
+  text-align: center; /* Centrar texto */
+  padding: 20px 0; /* Espacio arriba y abajo */
+  position: relative; /* Posición relativa para el footer */
+  bottom: 0; /* Alinear al fondo */
+  width: 100%; /* Ancho completo */
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1); /* Sombra suave */
+}
+
+.footer p {
+  margin: 0; /* Sin margen */
+  font-size: 16px; /* Tamaño de fuente */
+}
+
+  

@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Feliz Dia Ma</title>
+</head>
+<body>
+    <header>
+        <nav>
+          <div class="logo">🌸</div>
+          <div class="hamburger" id="hamburger">
+            <i class="fas fa-bars"></i>
+          </div>
+          <ul class="nav-links" id="nav-links">
+            <li><a href="#bienvenida">Inicio</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#mensajes">Mensajes</a></li>
+            <li><a href="#agradecimientos">Agradecimientos</a></li>
+          </ul>
+        </nav>
+      </header>
+
+       <!-- Sección de Bienvenida -->
+       <section id="bienvenida">
+        <div class="mensaje-bienvenida">
+          <h1 class="animate-text">¡Feliz Día, Mamá!</h1>
+          <p class="mensaje-secundario">
+            Hoy vamos a decirte algunas cositas...
+          </p>
+        </div>
+        <div class="reproductor">
+          <audio id="audio" src="public/audio/audio.mp3" preload="auto"></audio>
+          <div class="reproductor-contenido">
+              <button class="boton-play" id="boton-play">Reproducir</button>
+          </div>
+      </div>
+      </section>
+
+      <section id="mensajes">
+        <h2 class="instrucciones">Tocá las cajas para ver el mensaje</h2>
+        <div class="mensaje-container">
+            <div class="mensaje" style="background-color: #FFB2D7;"> <!-- Rosa pastel -->
+              <div class="mensaje-text">Primero que nada ¡Gracias por esforzarte para ser la mejor mamá!</div>
+            </div>
+            <div class="mensaje" style="background-color: #B2E0FF;"> <!-- Celeste pastel -->
+              <div class="mensaje-text">Tu apoyo en cualquier cosa que queramos hacer significa muchísimo</div>
+            </div>
+            <div class="mensaje" style="background-color: #FFB2D7;"> <!-- Rosa pastel -->
+              <div class="mensaje-text">Aunque nos cueste ser abiertos, te queremos</div>
+            </div>
+            <div class="mensaje" style="background-color: #B2E0FF;"> <!-- Celeste pastel -->
+              <div class="mensaje-text">Nos enseñaste mucho, aunque tardamos en aprender</div>
+            </div>
+            <div class="mensaje" style="background-color: #FFB2D7;"> <!-- Rosa pastel -->
+              <div class="mensaje-text">Gracias por tus consejos aunque los seguimos mas tarde que temprano</div>
+            </div>
+            <div class="mensaje" style="background-color: #B2E0FF;"> <!-- Celeste pastel -->
+              <div class="mensaje-text">Pero ya tenes que dejar de estresarte tanto</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+      
+
+
+
+      <section id="galeria">
+        <h2>Y acá tu mejor regalo</h2>
+        <div class="galeria-container">
+          <div class="galeria-imagen">
+            <img src="public/1.png" alt="Imagen 1">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/10.png" alt="Imagen 2">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/2.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/3.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/4.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/5.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/6.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/7.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/8.png" alt="Imagen 3">
+          </div>
+          <div class="galeria-imagen">
+            <img src="public/9.png" alt="Imagen 3">
+          </div>
+        </div>
+
+        <h2>Con la actuacion estelar del adoptado</h2>
+        <div class="foto-container">
+            <img src="public/fotos/5.png" alt="Adoptado 1" class="foto">
+            <img src="public/fotos/2.png" alt="Adoptado 2" class="foto">
+        </div>
+
+      </section>
+     
+      <section id="despedida" class="despedida-section">
+        <h2 class="despedida-titulo">Nos vemos muy muy pronto mami</h2>
+        <button id="mostrar-mensaje" class="boton">Hace click</button>
+        <div id="mensaje-desplegable" class="mensaje-desplegable oculto">
+            <p>Siempre vas a ser la primera persona a la que queremos cuando nos sentimos mal y a la primera a la que le queremos contar las cosas que nos salen bien.</p>
+        </div>
+      
+    </section>
+
+    <footer class="footer">
+      <p>&copy; <span id="year"></span> 2024</p>
+  </footer>
+  
+    
+  <script src="script.js"></script>
+</body>
+</html>
